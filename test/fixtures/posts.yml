@@ -1,11 +1,9 @@
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
-
 one:
-  title: MyString
-  slug: MyString
-  body: MyText
+  title: "First post!"
+  slug: first_post
+  body: "contents of first post"
 
 two:
-  title: MyString
-  slug: MyString
-  body: MyText
+  title: "second post!"
+  slug: second_post
+  body: "MyText for second post"
