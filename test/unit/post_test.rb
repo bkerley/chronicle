@@ -7,6 +7,7 @@ class PostTest < ActiveSupport::TestCase
 	should_require_attributes :title, :slug
 	
 	should_not_allow_values_for :slug, "spaced slug", "slashed/slug", "dotted.slug"
+	should_allow_values_for :slug, "slug", "underscored_slug", "dashed-slug"
 	
 	context "An untagged post" do
 		before do
