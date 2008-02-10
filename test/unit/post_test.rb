@@ -26,9 +26,20 @@ class PostTest < ActiveSupport::TestCase
 			assert_equal @post.tags.first, @tag
 		end
 		
-		should "accept a new tag from a string" do
-			@post.tag_string = "three test tags"
-			assert_equal 3, @post.tags.length
+		context "when taking a string of new tags" do
+			before do
+				@post.tag_string = "three test tags"
+			end
+			
+			should "have the appropriate number of tags" do
+				assert_equal 3, @post.tags.length
+			end
+			
+			should "dump a tag string containing the tags" do
+				%w(three test tags).each do |s|
+					assert_match s, @post.tag_string
+				end
+			end
 		end
 	end
 end
