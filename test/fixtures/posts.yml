@@ -1,9 +1,9 @@
 one:
-  title: "First post!"
+  title: First post!
   slug: first_post
-  body: "contents of first post"
+  body: contents of first post
 
 two:
-  title: "second post!"
+  title: second post!
   slug: second_post
-  body: "MyText for second post"
+  body: MyText for second post

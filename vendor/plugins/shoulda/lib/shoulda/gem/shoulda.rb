@@ -126,7 +126,7 @@ module Thoughtbot
       # Run before every should block in the current context.
       # If a setup block appears in a nested context, it will be run after the setup blocks
       # in the parent contexts.
-      def setup(&setup_block)
+      def before(&setup_block)
         if @@setup_defined
           raise RuntimeError, "Either you have two setup blocks in one context, " + 
                               "or a setup block outside of a context.  Both are equally bad."
@@ -139,7 +139,7 @@ module Thoughtbot
       # Run after every should block in the current context.
       # If a teardown block appears in a nested context, it will be run before the teardown 
       # blocks in the parent contexts.
-      def teardown(&teardown_block)
+      def after(&teardown_block)
         @@teardown_blocks << teardown_block
       end
 
