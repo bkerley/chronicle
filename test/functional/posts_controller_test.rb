@@ -14,7 +14,7 @@ class PostsControllerTest < ActionController::TestCase
 
 	def test_should_create_post
 		assert_difference('Post.count') do
-			post :create, :post => {:title=>'New Post Title', :slug=>'asdf', :body=>"Friends!" }
+			post :create, :post => {:title=>'New Post Title', :slug=>'asdf', :body=>"Friends!", :tag_string=>'new post test' }
 		end
 
 		assert_redirected_to post_path(assigns(:post))
