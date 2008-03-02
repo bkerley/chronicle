@@ -13,7 +13,11 @@ class Post < ActiveRecord::Base
 	end
 	
 	def tag_string
-		self.tags.map(&:title).join(" ")
+		if self.tags.length == 0
+			"no tags yet"
+		else
+			self.tags.map(&:title).join(" ")
+		end
 	end
 	
 	def abbreviated

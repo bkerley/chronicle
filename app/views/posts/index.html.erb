@@ -3,16 +3,15 @@
 <table>
   <tr>
     <th>Title</th>
-    <th>Slug</th>
-    <th>Body</th>
+    <th>Tags</th>
   </tr>
 
 <% for post in @posts %>
+	<% content_id = "content-#{post.id}"%>
   <tr>
-    <td><%=h post.title %></td>
-    <td><%=h post.slug %></td>
-    <td><%=h post.body %></td>
-    <td><%= link_to 'Show', post %></td>
+    <td><%=h post.title %><td>
+    <td><%= editable_content_tag :span, post, :tag_string, true %></td>
+    <td><%= link_to 'Show', single_url(post.slug) %></td>
     <td><%= link_to 'Edit', edit_post_path(post) %></td>
     <td><%= link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>

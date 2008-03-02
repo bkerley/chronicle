@@ -1,5 +1,5 @@
 <ul id="tagcloud">
-<% @tags.each do |t| %>
-	<li><%=h t.title %></li>
+<% @tags.select{|t| t.posts.length > 0}.each do |t| %>
+	<li><%=h t.title %> (<%=h t.posts.length %>)</li>
 <% end %>
 </ul>

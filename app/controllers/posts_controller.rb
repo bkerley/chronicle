@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+	
 	# GET /posts
 	# GET /posts.xml
 	def index
@@ -17,6 +18,7 @@ class PostsController < ApplicationController
 
 		respond_to do |format|
 			format.html # show.html.erb
+			format.json { render :json => @post }
 			format.xml  { render :xml => @post }
 		end
 	end
@@ -63,7 +65,8 @@ class PostsController < ApplicationController
 			if @post.update_attributes(params[:post])
 				flash[:notice] = 'Post was successfully updated.'
 				format.html { redirect_to(@post) }
-				format.xml  { head :ok }
+				format.json { render :json => @post.to_json(:methods=>:tag_string) }
+				format.xml  { head :xml => @post }
 			else
 				format.html { render :action => "edit" }
 				format.xml  { render :xml => @post.errors, :status => :unprocessable_entity }

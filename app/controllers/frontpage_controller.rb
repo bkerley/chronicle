@@ -9,7 +9,7 @@ class FrontpageController < ApplicationController
 	end
 	
 	def tags
-		@tags = Tag.find(:all)
+		@tags = Tag.find(:all, :order=>'title asc')
 	end
 	
   def single
