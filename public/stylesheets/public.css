@@ -1,0 +1,29 @@
+body {
+	margin: 0em;
+	padding: 0em;
+}
+
+#header {
+	margin: 1em;
+}
+
+#header ul li {
+	display: inline;
+	list-style-type: none;
+	padding-right: 1em;
+}
+
+#content {
+	margin: 1em;
+}
+
+#footer {
+	background-color: #aaa;
+	margin: 0em;
+	padding: 0em;
+}
+#footer p {
+	margin: 0em;
+	padding: 1em;
+	font-size: smaller;
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<title><%= flash[:title] %></title>
+		<%= stylesheet_link_tag 'public' %>
+	</head>
+	<body>
+		<div id="header">
+			<h1>Bryce Kerley</h1>
+			<ul>
+				<li>Home</li>
+				<li>Tags</li>
+				<li>About</li>
+			</ul>
+		</div>
+		
+		<div id="content">
+			<%= yield %>
+		</div>
+		<div id="footer">
+			<p>
+				All content &copy; 2008 by Bryce Kerley.
+				This work is licensed under a 
+				<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">
+					Creative Commons Attribution-Share Alike 3.0 Unported License</a>.
+				Any original source code posted without explicit licensing information
+				is licensed under the
+					<a rel="license" href="http://sam.zoy.org/wtfpl/">WTF Public License</a>
+				without warranty or guarantee that it'll work.
+			</p>
+		</div>
+	</body>
+</html>
