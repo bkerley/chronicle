@@ -15,4 +15,12 @@ class Post < ActiveRecord::Base
 	def tag_string
 		self.tags.map(&:title).join(" ")
 	end
+	
+	def abbreviated
+		if self.excerpt.nil?
+			self.body
+		else
+			self.excerpt 
+		end
+	end
 end
