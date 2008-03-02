@@ -1,0 +1,11 @@
+<div id="post-<%= post.id %>" class="post">
+<h1>
+	<%=link_to h(post.title), single_url(:slug=>post.slug)%>
+</h1>
+<div class="excerpt">
+<%= markdown post.excerpt %>
+</div>
+<div class="body">
+<%= markdown post.body %>
+</div>
+</div>
