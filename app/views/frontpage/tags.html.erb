@@ -1,5 +1,7 @@
 <ul id="tagcloud">
-<% @tags.select{|t| t.posts.length > 0}.each do |t| %>
-	<li><%=h t.title %> (<%=h t.posts.length %>)</li>
+<% @tag_cloud.each do |t| %>
+	<li style="font-size: <%= 1 + 0.5*Math.log(t[:count]) %>em"><%=
+	link_to h(t[:title]), one_tag_path(t[:title]), :title=>"#{t[:count]} posts"
+	%></li>
 <% end %>
 </ul>

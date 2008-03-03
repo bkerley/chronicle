@@ -8,8 +8,14 @@ class FrontpageController < ApplicationController
 		
 	end
 	
+	def one_tag
+		@posts = Tag.find_by_title(params[:tag]).posts
+		render :template=>'frontpage/index'
+	end
+	
 	def tags
-		@tags = Tag.find(:all, :order=>'title asc')
+		tags = Tag.find(:all, :order=>'title asc')
+		@tag_cloud = tags.select{|t| t.posts.length > 0}.map{|t| {:title=>t.title, :count=>t.posts.length}}
 	end
 	
   def single
