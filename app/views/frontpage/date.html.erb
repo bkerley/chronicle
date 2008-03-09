@@ -1,0 +1,11 @@
+<% cur_stamp = nil %>
+<% @posts.each do |p| %>
+	<% my_stamp =  p.created_at.strftime("%B %Y") %>
+	<% unless my_stamp == cur_stamp %>
+		<% cur_stamp = my_stamp %>
+		<h2><%=h cur_stamp %></h2>
+	<% end %>
+	<p>
+		<%=link_to h(p.title), single_url(:slug=>p.slug)%>
+	</p>
+<% end %>
