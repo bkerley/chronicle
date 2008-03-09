@@ -1,4 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :users
+
+  map.resource :session
+
 	map.resources :tags
 	
 	map.resources :posts
@@ -10,6 +14,9 @@ ActionController::Routing::Routes.draw do |map|
 	map.one_tag 'cloud/:tag', :controller=>'frontpage', :action=>'one_tag'
 	map.date 'date', :controller=>'frontpage', :action=>'date'
 	
+	map.signup '/signup', :controller => 'users', :action => 'new'
+	map.login '/login', :controller => 'sessions', :action => 'new'
+	map.logout '/logout', :controller => 'sessions', :action => 'destroy'
 
 	
 	# See how all your routes lay out with "rake routes"
