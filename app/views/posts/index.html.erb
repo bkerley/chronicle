@@ -1,21 +1,24 @@
 <h1>Listing posts</h1>
 
 <table>
-  <tr>
-    <th>Title</th>
-    <th>Tags</th>
-  </tr>
+	<tr>
+		<th>Title</th>
+		<th>Tags</th>
+		<th>Actions</th>
+	</tr>
 
-<% for post in @posts %>
+	<% for post in @posts %>
 	<% content_id = "content-#{post.id}"%>
-  <tr>
-    <td><%=h post.title %><td>
-    <td><%= editable_content_tag :span, post, :tag_string, true %></td>
-    <td><%= link_to 'Show', single_url(post.slug) %></td>
-    <td><%= link_to 'Edit', edit_post_path(post) %></td>
-    <td><%= link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
+	<tr>
+		<td><%=h post.title %></td>
+		<td><%= editable_content_tag :span, post, :tag_string, true %></td>
+		<td>
+			<%= link_to 'Show', single_url(post.slug) %>
+			<%= link_to 'Edit', edit_post_path(post) %>
+			<%= link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete %>
+		</td>
+	</tr>
+	<% end %>
 </table>
 
 <br />
