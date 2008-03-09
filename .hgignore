@@ -3,5 +3,6 @@ syntax: glob
 #mac crap
 .DS_Store
 
-#databases
-.sqlite3
+#databases & state
+*.sqlite3
+*.log
