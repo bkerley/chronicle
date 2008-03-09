@@ -1,0 +1,7 @@
+syntax: glob
+
+#mac crap
+.DS_Store
+
+#databases
+.sqlite3
