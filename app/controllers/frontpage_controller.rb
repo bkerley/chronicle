@@ -5,7 +5,7 @@ class FrontpageController < ApplicationController
   end
 	
 	def date
-		
+		@posts = Post.find(:all, :order=>'created_at desc')
 	end
 	
 	def one_tag
