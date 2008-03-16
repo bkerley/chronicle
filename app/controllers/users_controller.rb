@@ -1,4 +1,9 @@
 class UsersController < ApplicationController
+	# paradoxical login requirement before creating new users
+	# you'll have to grandfather the first user somehow
+	before_filter :login_required
+	
+	
   # Be sure to include AuthenticationSystem in Application Controller instead
   include AuthenticatedSystem
   
