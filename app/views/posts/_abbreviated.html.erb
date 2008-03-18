@@ -4,5 +4,7 @@
 </h1>
 <div class="excerpt">
 <%= markdown abbreviated.abbreviated %>
+
+<%=link_to "[more]", single_url(:slug=>abbreviated.slug) if abbreviated.abbreviated? %>
 </div>
 </div>

@@ -20,6 +20,10 @@ class Post < ActiveRecord::Base
 		end
 	end
 	
+	def abbreviated?
+		self.excerpt
+	end
+	
 	def abbreviated
 		if self.excerpt.nil?
 			self.body
