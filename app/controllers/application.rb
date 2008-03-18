@@ -9,4 +9,8 @@ class ApplicationController < ActionController::Base
   protect_from_forgery # :secret => 'ba200ed6db47401e9bc9d5ea6d8ccadc'
 	
 	include AuthenticatedSystem
+	
+	def title=(content)
+		flash.now[:title] = content
+	end
 end

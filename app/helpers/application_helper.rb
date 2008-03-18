@@ -1,5 +1,9 @@
 # Methods added to this helper will be available to all templates in the application.
 module ApplicationHelper
+	def title
+		flash[:title]
+	end
+	
 	def editable_content_tag(elemtype, obj, prop, editable, options = {}, editOptions = {}, ajaxOptions = {})
 	    objname = obj.class.to_s.downcase
 	    options[:url] = "/#{objname.pluralize}/#{obj.id}" unless options.has_key? :url
