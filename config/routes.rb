@@ -14,6 +14,8 @@ ActionController::Routing::Routes.draw do |map|
 	map.one_tag 'cloud/:tag', :controller=>'frontpage', :action=>'one_tag'
 	map.date 'date', :controller=>'frontpage', :action=>'date'
 	
+	map.about 'aboot/:slug', :controller=>'about', :action=>'static', :slug=>'about'
+	
 	map.signup '/signup', :controller => 'users', :action => 'new'
 	map.login '/login', :controller => 'sessions', :action => 'new'
 	map.logout '/logout', :controller => 'sessions', :action => 'destroy'
