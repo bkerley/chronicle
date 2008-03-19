@@ -1,0 +1,14 @@
+<div id="post-<%= @post.id %>" class="post">
+<h1>
+	<%=link_to h(@post.title), about_url(:slug=>@post.slug)%>
+</h1>
+<div class="body">
+<%= markdown @post.body %>
+</div>
+</div>
+<h1>More about:</h1>
+<ul>
+	<% @abouts.each do |a| %>
+		<li><%=link_to a.title, about_url(:slug=>a.slug)%></li>
+	<% end %>
+</ul>
