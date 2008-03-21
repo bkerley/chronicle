@@ -3,11 +3,18 @@ class PostsController < ApplicationController
 	# GET /posts
 	# GET /posts.xml
 	def index
-		@posts = Post.find(:all)
+		@posts = Post.find(:all, :order=>'created_at desc')
 
 		respond_to do |format|
 			format.html # index.html.erb
-			format.xml  { render :xml => @posts }
+			format.xml do
+				@posts = Post.find(:all, :order=>'created_at desc', :limit=>15)
+				render :xml => @posts
+			end
+			format.atom do
+				@posts = Post.find(:all, :order=>'created_at desc', :limit=>15)
+				render
+			end
 		end
 	end
 

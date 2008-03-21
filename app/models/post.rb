@@ -25,10 +25,18 @@ class Post < ActiveRecord::Base
 	end
 	
 	def abbreviated
-		if self.excerpt.nil?
+		unless abbreviated?
 			self.body
 		else
 			self.excerpt 
+		end
+	end
+	
+	def entire
+		if abbreviated?
+			self.excerpt + self.body
+		else
+			self.body
 		end
 	end
 end
