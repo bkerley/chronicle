@@ -10,7 +10,7 @@ class FrontpageController < ApplicationController
 	end
 	
 	def one_tag
-		@posts = Tag.find_by_title(params[:tag]).posts rescue
+		@posts = Tag.find_by_title(params[:tag]).posts.find(:all, :order=>'created_at desc') rescue
 			raise(ActiveRecord::RecordNotFound, "No posts with that tag")
 		self.title = "Posts tagged #{params[:tag]}"
 		render :template=>'frontpage/index'
