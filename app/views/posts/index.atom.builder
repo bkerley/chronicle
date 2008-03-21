@@ -13,7 +13,10 @@ atom_feed(:schema_date=>"2008-03-20") do |feed|
 	for post in @posts
 		feed.entry(post, :url=>single_url(post.slug)) do |entry|
 			entry.title(post.title)
-			entry.content(markdown(post.entire), :type => 'html')
+			entry.content(render(:partial=>'posts/short.html.erb', :locals=>{:abbreviated=>post}), :type => 'html')
+			post.tags.each do |t|
+				entry.category(:term=>t.title)
+			end
 		end
 	end
 end
