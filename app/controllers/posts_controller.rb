@@ -1,6 +1,5 @@
 class PostsController < ApplicationController
 	before_filter :login_required, :only => [ :new, :create, :destroy, :edit, :update ]
-	caches_page :index
 	cache_sweeper :post_sweeper, :only => [:create, :update, :destroy]
 	
 	# GET /posts
