@@ -1,5 +1,6 @@
 class AboutController < ApplicationController
 	layout 'public'
+	caches_page :static
 	
   def static
 		get_abouts

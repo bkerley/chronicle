@@ -1,5 +1,7 @@
 class FrontpageController < ApplicationController
 	layout 'public'
+	caches_page :index, :date, :one_tag, :tags, :single
+	
   def index
 		@posts = Post.find(:all, :order=>'created_at desc', :limit=>5)
   end

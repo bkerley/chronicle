@@ -1,12 +1,18 @@
 class PostsController < ApplicationController
 	before_filter :login_required, :only => [ :new, :create, :destroy, :edit, :update ]
+	caches_page :index
+	cache_sweeper :post_sweeper, :only => [:create, :update, :destroy]
+	
 	# GET /posts
 	# GET /posts.xml
 	def index
-		@posts = Post.find(:all, :order=>'created_at desc')
-
+		# do the finding in the per-format code
+		# I don't want an atom feed with 200 entries
 		respond_to do |format|
-			format.html # index.html.erb
+			format.html do
+				@posts = Post.find(:all, :order=>'created_at desc')
+				render
+			end
 			format.xml do
 				@posts = Post.find(:all, :order=>'created_at desc', :limit=>15)
 				render :xml => @posts
