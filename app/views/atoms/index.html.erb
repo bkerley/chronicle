@@ -1,0 +1,24 @@
+<h1>Listing atoms</h1>
+
+<table>
+  <tr>
+    <th>Url</th>
+    <th>Name</th>
+    <th>Updated</th>
+  </tr>
+
+<% for atom in @atoms %>
+  <tr>
+    <td><%=h atom.url %></td>
+    <td><%=h atom.name %></td>
+    <td><%=h atom.updated %></td>
+    <td><%= link_to 'Show', atom %></td>
+    <td><%= link_to 'Edit', edit_atom_path(atom) %></td>
+    <td><%= link_to 'Destroy', atom, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New atom', new_atom_path %>

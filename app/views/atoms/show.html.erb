@@ -1,0 +1,18 @@
+<p>
+  <b>Url:</b>
+  <%=h @atom.url %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%=h @atom.name %>
+</p>
+
+<p>
+  <b>Updated:</b>
+  <%=h @atom.updated %>
+</p>
+
+
+<%= link_to 'Edit', edit_atom_path(@atom) %> |
+<%= link_to 'Back', atoms_path %>
