@@ -1,4 +1,5 @@
 class AtomsController < ApplicationController
+	before_filter :login_required, :only => [ :new, :create, :destroy, :edit, :update ]
   # GET /atoms
   # GET /atoms.xml
   def index
