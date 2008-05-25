@@ -1,6 +1,10 @@
+.twitter {
+}
 .twitter .timestamp {
 	font-size: smaller;
 	color: #336;
+}
+.twitter p {
 }
 .twitter .content {
 	
