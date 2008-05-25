@@ -18,7 +18,7 @@ class Atom < ActiveRecord::Base
 				:slug =>  entry.title.strip.gsub(/\s/,'_').gsub(/[^\d\w-]/,'')
 			)
 			puts "Saving #{p.inspect}"
-			self.updated = @current
+			self.updated = entry.updated
 			self.save
 			p.save
 		end
