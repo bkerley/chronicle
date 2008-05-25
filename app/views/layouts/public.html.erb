@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 	<head>
 		<title><%=h (title ? (title + " | " ) : "" ) + "Bryce Kerley" %></title>
-		<%= stylesheet_link_tag 'public' %>
+		<%= %w{public sunburst tdigest}.map{|s| stylesheet_link_tag s}.join("\n") %>
 	</head>
 	<body>
 		<div id="header">
