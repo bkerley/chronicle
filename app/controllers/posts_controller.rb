@@ -2,6 +2,9 @@ class PostsController < ApplicationController
 	before_filter :login_required, :only => [ :new, :create, :destroy, :edit, :update ]
 	cache_sweeper :post_sweeper, :only => [:create, :update, :destroy]
 	
+	 acts_as_collection :title => 'posts', :workspace => 'Bryce Kerley', :href => 'http://chronicle.local/posts.atom',
+        :accept => Mime::ATOM_ENTRY
+	
 	# GET /posts
 	# GET /posts.xml
 	def index
