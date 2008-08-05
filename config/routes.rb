@@ -24,6 +24,6 @@ ActionController::Routing::Routes.draw do |map|
 	map.login '/login', :controller => 'sessions', :action => 'new'
 	map.logout '/logout', :controller => 'sessions', :action => 'destroy'
 
-	
+	map.services '/services', :controller=>'services', :action=>'index'
 	# See how all your routes lay out with "rake routes"
 end
