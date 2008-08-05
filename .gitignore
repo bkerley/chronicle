@@ -6,3 +6,7 @@ syntax: glob
 #databases & state
 *.sqlite3
 *.log
+public/*.html
+!public/404.html
+!public/422.html
+!public/500.html
