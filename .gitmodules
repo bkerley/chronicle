@@ -1,0 +1,3 @@
+[submodule "vendor/plugins/atompub-server"]
+	path = vendor/plugins/atompub-server
+	url = git://github.com/calavera/atompub-server.git
