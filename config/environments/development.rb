@@ -18,4 +18,4 @@ config.action_view.cache_template_extensions         = false
 config.action_mailer.raise_delivery_errors = false
 
 # for testing
-config.action_controller.perform_caching = true
+# config.action_controller.perform_caching = true
