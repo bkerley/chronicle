@@ -1,7 +1,3 @@
-require 'lib/atom-0.3/lib/atom'
-require 'net/http'
-require 'uri'
-
 class Atom < ActiveRecord::Base
 	validates_presence_of :url, :name
 	validates_uniqueness_of :url, :name
