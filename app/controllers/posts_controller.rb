@@ -3,7 +3,8 @@ class PostsController < ApplicationController
 	cache_sweeper :post_sweeper, :only => [:create, :update, :destroy]
 	
 	 acts_as_collection :title => 'posts', :workspace => 'Bryce Kerley', :href => 'http://chronicle.local/posts.atom',
-        :accept => Mime::ATOM_ENTRY
+        :accept => Mime::ATOM_ENTRY,
+        :categories => [{:href => 'http://chronicle.local/cloud'}]
 	
 	# GET /posts
 	# GET /posts.xml
